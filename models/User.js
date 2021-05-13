@@ -32,9 +32,9 @@ User.init({
             validate: {
                 len: [4],
             },
-            agency_name: {
-                type: DataTypes.STRING,
-                allowNull: false,
+        agency_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
             }
         },
     },
