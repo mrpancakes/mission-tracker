@@ -1,0 +1,52 @@
+body {
+    margin: auto;
+}
+
+.hex-bg {
+    background-image: url(../images/home-background.png);
+
+}
+
+#login-page {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+#login-page img {
+    width: 300px;
+}
+
+#login-page a {
+    text-decoration: none;
+    color: white;
+}
+
+#login-page a:hover {
+    transform: scale(1.1);
+    transition: all 0.4s;
+}
+
+#homepage-logo {
+    /* min-width: 150px; */
+    width: 400px;
+    height: 400px;
+
+    background-color: black;
+    /* flex-basis: 200px; */
+    background-image: url(../images/logo.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+}
+
+#homepage-brand {
+    font-family: 'Space Mono', monospace;
+    color: white;
+}
+
+#access-btn {
+    font-size: 1.2rem;
+    width: 60%;
+}
