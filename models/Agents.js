@@ -28,30 +28,31 @@ Agents.init({
             allowNull: false,
         },
         status: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         location: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        specialities: {
+        specialties: {
             type: DataTypes.STRING,
             allowNull: false,
             },
         user_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-            },
-        },
+            references: {
+            model: 'user',
+            key: 'id',
+            }
+      },
+    },
     {
         sequelize,
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user',
+        modelName: 'agents',
     }
 );
 module.exports = Agents;
