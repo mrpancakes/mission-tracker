@@ -22,6 +22,10 @@ a {
     text-decoration: none;
 }
 
+.filter {
+    cursor: pointer;
+}
+
 .fa-circle {
     position: absolute;
     right: 10px;
@@ -34,8 +38,7 @@ a {
 }
 
 .hex-bg {
-    /* background-color: rgb(34, 34, 34); */
-    background-image: url(../images/gray-pattern.png);
+    background-image: url('/images/gray-pattern.png');
 }
 
 #field-agents-headline{
@@ -117,7 +120,6 @@ a {
 
 #access-btn {
     font-size: 1.2rem;
-    width: 60%;
 }
 
 @media screen and (max-width: 993px) {
