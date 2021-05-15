@@ -35,24 +35,27 @@ router.get('/register', (req, res) => {
 // Home Page - Shows agents only created by logged in user
 
 router.get('/home', async (req, res) => {
+
   try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Agents }],
+    });
 
-      const userData = await User.findByPk(req.session.user_id, {
-          attributes: { exclude: ['password'] },
-          include: [{ model: Agents }],
-      });
 
-      const user = userData.get({ plain: true });
+    const user = userData.get({ plain: true });
 
-      res.render('home', {
-          user,
-          loggedIn: req.session.loggedIn,
-      });
+    console.log(user);
 
-      console.log(user);
+    res.render('home', {
+      user,
+      loggedIn: req.session.loggedIn,
+    });
+
 
   } catch (error) {
-      res.status(400).json(error);
+    res.status(400).json(error);
+    console.log(error);
   }
 })
 
@@ -85,13 +88,13 @@ router.get('/home', async (req, res) => {
 // View Specific Agents
 router.get('/agents/:id', async (req, res) => {//router.get is 
   try {
-  const agentData = await Agents.findByPk(req.params.id,{
-    include: [
-      {
-        model: User,
-        attributes: ['user_name'],
-      },      ],
-    });   
+    const agentData = await Agents.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['user_name'],
+        },],
+    });
     console.log(agentData);
     const agent = agentData.get({ plain: true });;// this is for the specific agent
     console.log(agent);
@@ -146,7 +149,7 @@ router.get('/logout', (req, res) => {
     req.session.destroy(() => {
       res.status(204).redirect("/");
     });
-  }else{ 
+  } else {
     res.status(204).redirect("/");
   }
 });

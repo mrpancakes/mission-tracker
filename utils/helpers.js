@@ -1,3 +1,14 @@
-//emoji icon sillouette man vs woman 
-//active vs inactive green cirlce red circle icon
+module.exports = {
+    genderChoice: (gender) => {
 
+        let genderBinary;
+
+      if(gender === 'Male'){
+          genderBinary = true;
+      } else {
+          genderBinary = false;
+      }
+      return genderBinary;
+    },
+  };
+  

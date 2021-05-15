@@ -1,18 +1,19 @@
 //get post put and delete 
 ////get the user input for each agents thing when youre creating the agent
 //i dont think we need this i think we can put it all in userRoutes
+
 const router = require('express').Router();
-const {
-  Agents,
-  User
-} = require('../../models');
+const { Agents, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
+
   try {
     const newAgent = await Agents.create({
       ...req.body,
       user_id: req.session.user_id,
+      male,
+      female
     });
     res.status(200).json(newAgent);
   } catch (err) {
