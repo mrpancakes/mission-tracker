@@ -7,31 +7,80 @@ const router = require('express').Router();
 const { Agents, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-// Home Page
+
+
+// Opening Access Page
 router.get('/', async (req, res) => {
-  try {
-    // Get all agents info and JOIN with user data
-    const agentsData = await Agents.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['user_name'],
-        },      ],
-    });
+  res.render('opening');
+})
 
-    // Serialize data so the template can read it, this is getting allll the agents data
-    const agents = agentsData.map((agents) => agents.get({ plain: true }));
 
-    // Pass serialized data and session flag into template and putting into a dashboard view file
-    res.render('dashboard', { //this is rendering whatever view we want it to, 
-        //just calling it dashboard for now, it can include all agents and then you click on an agent and it takes you to agent view below
-      agents,
-      logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
+// Login Page
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to home
+  if (req.session.logged_in) {
+    res.redirect('/home');
+    return;
   }
+  res.render('login');
 });
+
+
+// Register Page
+router.get('/register', (req, res) => {
+  res.render('register');
+});
+
+
+// Home Page - Shows agents only created by logged in user
+
+router.get('/home', async (req, res) => {
+  try {
+
+      const userData = await User.findByPk(req.session.user_id, {
+          attributes: { exclude: ['password'] },
+          include: [{ model: Agents }],
+      });
+
+      const user = userData.get({ plain: true });
+
+      res.render('home', {
+          user,
+          loggedIn: req.session.loggedIn,
+      });
+
+      console.log(user);
+
+  } catch (error) {
+      res.status(400).json(error);
+  }
+})
+
+// Home Page OLD
+// router.get('/home', async (req, res) => {
+//   try {
+//     // Get all agents info and JOIN with user data
+//     const agentsData = await Agents.findAll({
+//       include: [
+//         { model: User }
+//       ],
+//     });
+
+//     // Serialize data so the template can read it, this is getting allll the agents data
+//     const agents = agentsData.map((agents) => agents.get({ plain: true }));
+
+//     // Pass serialized data and session flag into template and putting into a dashboard view file
+//     res.render('home', {
+//       agents,
+//       // logged_in: req.session.logged_in 
+//     });
+
+//     console.log(agents);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
 
 // View Specific Agents
 router.get('/agents/:id', async (req, res) => {//router.get is 
@@ -78,15 +127,7 @@ router.get('/user', withAuth, async (req, res) => {//getting user model name
   }
 });
 
-// Login Page
-router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/dashboard');//not sure if this is a good place to redirect user
-    return;
-  }
-  res.render('login');//i guess if they are logged in it redirects them here, to login views, which makes sense
-});
+
 
 // Signup Page
 router.get('/signup', (req, res) => {

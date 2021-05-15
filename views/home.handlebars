@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-lg navbar-dark  ml-auto">
+        <div class="container-fluid m-5 nav-details">
+                <a class="navbar-brand" href="#">
+                        <img src="../images/logo.png" alt="" width="80px" class="d-inline-block align-text-top">
+                </a>
+                <div class="agency-name">B.O.S.S.</div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav m-4">
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Logout</a>
+                                </li>
+                        </ul>
+                </div>
+        </div>
+</nav>
+
+<main class="container mt-5">
+        <header class="headline d-flex flex-column justify-content-center align-items-center">
+
+                <div class="d-flex align-items-center">
+                        <h1 id="field-agents-headline">Field Agents </h1>
+                        <i class="fas fa-plus-square" id="add-agent-btn"></i>
+                </div>
+
+                <h1 class="mb-4 hide" id="add-agent-headline">Add New Agent</h1>
+                <button class="btn btn-danger hide" id="abort-create-agent">Abort</button>
+                <div class="d-flex justify-content-center" id="filter-set">
+                        <div class="m-4 border-bottom filter" id="allAgentsFilter">All</div>
+                        <div class="m-4 filter" id="activeAgentsFilter">Active</div>
+                        <div class="m-4 filter" id="inactiveAgentsFilter">Inactive</div>
+                </div>
+        </header>
+
+        {{!-- Agent Card --}}
+        <div class="row d-flex justify-content-center" id="field-agent-cards">
+                <div class="col-12 col-md-6 col-lg-3 mb-5 active">
+                <div class="card  d-flex flex-column justify-content-between align-items-center m-auto">
+                    <a href="#">
+                        <div class="text-center mt-2 card-name">Tango</div>
+                        <i class="fas fa-circle green"></i>
+                        <img src="../images/man-agent.png" alt="agent-man" class="agent-image">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <form class="hide" id="add-agent-form">
+            <div class="mb-3">
+                <label for="new-agent-codename" class="form-label">Codename</label>
+                <input type="text" maxlength="13" class="form-control" id="lnew-agent-codename"
+                    aria-describedby="codename">
+            </div>
+            <div class="mb-3">
+                <label for="new-agent-first" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="new-agent-first" aria-describedby="firstname">
+            </div>
+            <div class="mb-3">
+                <label for="new-agent-last" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="new-agent-last" aria-describedby="lastname">
+            </div>
+            <div class="mb-2">Gender</div>
+            <select class="form-select mb-3" aria-label="gender">
+                <option selected>Choose one</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+            </select>
+            <div class="mb-3">
+                <label for="new-agent-city" class="form-label">Assigned City</label>
+                <input type="text" class="form-control" id="new-agent-city" aria-describedby="cityname">
+            </div>
+            <div class="mb-3">
+                <label for="new-agent-skills" class="form-label">Specialties</label>
+                <input type="text-area" class="form-control" id="new-agent-skills" aria-describedby="skills">
+            </div>
+            <div class="mb-2">Status</div>
+            <select class="form-select mb-3" aria-label="status">
+                <option selected>Choose one</option>
+                <option value="1">Active</option>
+                <option value="2">Inactive</option>
+            </select>
+            <button type="submit" class="form-btn btn btn-outline-light mt-3">Add Agent</button>
+        </form>
+</main>
