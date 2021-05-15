@@ -22,6 +22,10 @@ a {
     text-decoration: none;
 }
 
+.filter {
+    cursor: pointer;
+}
+
 .fa-circle {
     position: absolute;
     right: 10px;
