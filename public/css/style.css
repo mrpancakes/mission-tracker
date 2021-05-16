@@ -10,10 +10,6 @@ nav {
     height: 150px;
 }
 
-header {
-    margin-bottom: 80px;
-}
-
 form {
     width: 300px;
 }
@@ -32,25 +28,40 @@ a {
     top: 10px;
 }
 
-.fas.fa-plus-square {
+.fas.fa-plus-square{
     font-size: 1.8rem;
     cursor: pointer;
+}
+.fas.fa-times {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    border: 1px solid rgb(208, 53, 53);
+    background-color: rgb(206, 55, 55);
+    padding: 1px 5px 1px 5px;
+    border-radius: 3px;
 }
 
 .hex-bg {
     background-image: url('/images/gray-pattern.png');
 }
 
-#field-agents-headline{
+#field-agents-headline, #add-agent-headline{
     margin: 20px;
 }
+
+
 
 .agency-name {
     font-size: 1.3rem;
     margin-left: 30px;
 }
 
-.form-btn {
+.login-btn {
+    width: 100%
+}
+
+.register-btn {
     width: 50%;
 }
 

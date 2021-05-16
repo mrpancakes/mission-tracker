@@ -10,16 +10,20 @@ nav {
     height: 150px;
 }
 
-header {
-    margin-bottom: 80px;
-}
-
 form {
     width: 300px;
 }
 
 a {
     text-decoration: none;
+}
+
+.lg-bottom-margin{
+    margin-bottom: 80px;
+}
+
+.sm-bottom-margin{
+    margin-bottom: 80px;
 }
 
 .filter {
@@ -32,18 +36,22 @@ a {
     top: 10px;
 }
 
-.fas.fa-plus-square {
+.fas.fa-plus-square{
     font-size: 1.8rem;
     cursor: pointer;
 }
-
-.hex-bg {
-    /* background-color: rgb(34, 34, 34); */
-    background-image: url(../images/gray-pattern.png);
+.fas.fa-times {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    border: 1px solid rgb(208, 53, 53);
+    background-color: rgb(206, 55, 55);
+    padding: 1px 5px 1px 5px;
+    border-radius: 3px;
 }
 
-#field-agents-headline{
-    margin: 20px;
+.hex-bg {
+    background-image: url('../public/images/gray-pattern.png');
 }
 
 .agency-name {
@@ -121,7 +129,6 @@ a {
 
 #access-btn {
     font-size: 1.2rem;
-    width: 60%;
 }
 
 @media screen and (max-width: 993px) {
