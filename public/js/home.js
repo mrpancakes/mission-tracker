@@ -37,9 +37,9 @@ addAgentBtn.addEventListener('click', (event) => {
     fieldAgentsHeadline.setAttribute('class', 'hide');
     filterSet.setAttribute('class', 'hide');
 
-    addAgentHeadline.setAttribute('class', 'mb-4')
-    abortBtn.setAttribute('class', 'btn btn-danger');
-    newAgentForm.setAttribute('class', 'm-auto mb-4');
+    addAgentHeadline.setAttribute('class', '')
+    abortBtn.setAttribute('class', 'fas fa-times');
+    newAgentForm.setAttribute('class', 'm-auto mb-4 mt-4');
 
 });
 
@@ -49,7 +49,7 @@ abortBtn.addEventListener('click', (event) => {
     fieldAgentCards.setAttribute('class', 'row d-flex justify-content-center');
     addAgentBtn.setAttribute('class', 'fas fa-plus-square');
     fieldAgentsHeadline.setAttribute('class', '');
-    filterSet.setAttribute('class', 'd-flex justify-content-center');
+    filterSet.setAttribute('class', 'd-flex justify-content-center mb-5');
 
     addAgentHeadline.setAttribute('class', 'hide')
     abortBtn.setAttribute('class', 'hide');
