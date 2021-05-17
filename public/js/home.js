@@ -19,16 +19,6 @@ allAgentsFilter.textContent = `All (${allAgentsCount})`;
 activeAgentsFilter.textContent = `Active (${activeAgents.length})`;
 inactiveAgentsFilter.textContent = `Inactive (${inactiveAgents.length})`;
 
-document.addEventListener('click', (event) => {
-    event.preventDefault();
-
-    if(event.target.id == 'allAgentsFilter' || event.target.id == 'activeAgentsFilter' || event.target.id == 'inactiveAgentsFilter'){
-        console.log(event.target.id);
-    }
-
-});
-
-
 addAgentBtn.addEventListener('click', (event) => {
     event.preventDefault();
 
@@ -58,53 +48,61 @@ abortBtn.addEventListener('click', (event) => {
 });
 
 document.addEventListener('click', (event) => {
-    
+
     event.preventDefault();
     let userChoice;
 
-    if(event.target.id == 'allAgentsFilter' || event.target.id == 'activeAgentsFilter' || event.target.id == 'inactiveAgentsFilter'){
+    if (event.target.id == 'allAgentsFilter' || event.target.id == 'activeAgentsFilter' || event.target.id == 'inactiveAgentsFilter') {
         userChoice = event.target.id;
     }
 
     if (userChoice === 'activeAgentsFilter') {
-        for (let i = 0; i < inactiveAgents.length; i++) {
+
+        if (activeAgents > 0) {
             inactiveAgents[i].setAttribute('class', 'col-12 col-md-6 col-lg-3 mb-5 hide');
         };
 
         for (let i = 0; i < activeAgents.length; i++) {
             activeAgents[i].setAttribute('class', 'col-12 col-md-6 col-lg-3 mb-5');
-            activeAgentsFilter.setAttribute('class', 'm-4 filter border-bottom');
-            inactiveAgentsFilter.setAttribute('class', 'm-4 filter');
-            allAgentsFilter.setAttribute('class', 'm-4 filter');
         };
+
+        activeAgentsFilter.setAttribute('class', 'm-4 filter border-bottom border-2');
+        inactiveAgentsFilter.setAttribute('class', 'm-4 filter');
+        allAgentsFilter.setAttribute('class', 'm-4 filter');
     };
 
     if (userChoice === 'inactiveAgentsFilter') {
+
         for (let i = 0; i < activeAgents.length; i++) {
             activeAgents[i].setAttribute('class', 'col-12 col-md-6 col-lg-3 mb-5 hide');
         };
 
+
         for (let i = 0; i < inactiveAgents.length; i++) {
             inactiveAgents[i].setAttribute('class', 'col-12 col-md-6 col-lg-3 mb-5');
-            activeAgentsFilter.setAttribute('class', 'm-4 filter');
-            inactiveAgentsFilter.setAttribute('class', 'm-4 filter border-bottom');
-            allAgentsFilter.setAttribute('class', 'm-4 filter');
         };
+
+        activeAgentsFilter.setAttribute('class', 'm-4 filter');
+        inactiveAgentsFilter.setAttribute('class', 'm-4 filter border-bottom border-2');
+        allAgentsFilter.setAttribute('class', 'm-4 filter');
     };
 
     if (userChoice === 'allAgentsFilter') {
+
         for (let i = 0; i < activeAgents.length; i++) {
             activeAgents[i].setAttribute('class', 'col-12 col-md-6 col-lg-3 mb-5');
         };
 
         for (let i = 0; i < inactiveAgents.length; i++) {
             inactiveAgents[i].setAttribute('class', 'col-12 col-md-6 col-lg-3 mb-5');
-            activeAgentsFilter.setAttribute('class', 'm-4 filter');
-            inactiveAgentsFilter.setAttribute('class', 'm-4 filter');
-            allAgentsFilter.setAttribute('class', 'm-4 filter border-bottom');
         };
+
+
+        activeAgentsFilter.setAttribute('class', 'm-4 filter');
+        inactiveAgentsFilter.setAttribute('class', 'm-4 filter');
+        allAgentsFilter.setAttribute('class', 'm-4 filter border-bottom border-2');
     };
 
-    
+
 });
 
