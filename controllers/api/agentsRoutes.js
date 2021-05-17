@@ -11,9 +11,9 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newAgent = await Agents.create({
       ...req.body,
-      user_id: req.session.user_id,
-      male,
-      female
+      user_id: req.session.user_id
+      /////male,
+      //female
     });
     res.status(200).json(newAgent);
   } catch (err) {
