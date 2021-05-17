@@ -1,14 +1,16 @@
 module.exports = {
     genderChoice: (gender) => {
-
-        let genderBinary;
-
-      if(gender === 'Male'){
-          genderBinary = true;
-      } else {
-          genderBinary = false;
-      }
-      return genderBinary;
-    },
-  };
+    
+      if(gender === 'Male')
+    {
+      return `${'Male'}`
+    }
+     else{
+      
+        return `${'Female'}`;
+     }
+    }
+      
+    }
   
+    
