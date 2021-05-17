@@ -1,16 +1,33 @@
 <div class="d-flex flex-column align-items-center justify-content-end" id="login-page">
-        <img class="mb-1" src="../images/logo.png" alt="Undercover Logo">
-        <h2 class="mb-5" id="homepage-brand">Undercover</h2>
-        <form class="d-flex flex-column justify-content-center align-items-stretch login-form">
-                <div class="mb-3">
-                        <label for="login-username" class="form-label">Username</label>
-                        <input type="username" class="form-control" id="login-username" aria-describedby="username">
-                </div>
-                <div class="mb-3">
-                        <label for="login-password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="login-password">
-                </div>
-                <button type="submit" class="login-btn btn btn-outline-light mt-3 align-self-center">Login</button>
-        </form>
-        <a class="mt-4" href="/register">Register your agency</a>
+
+        <div id="login-section">
+                <a href="/"> <img class="mb-1" src="../images/logo.png" alt="Undercover Logo"></a>
+                <h2 class="mb-5" id="homepage-brand">Undercover</h2>
+                <form class="d-flex flex-column justify-content-center align-items-stretch login-form mb-4">
+                        <div class="mb-3">
+                                <label for="login-username" class="form-label">Username</label>
+                                <input type="username" class="form-control" id="login-username"
+                                        aria-describedby="username">
+                        </div>
+                        <div class="mb-3">
+                                <label for="login-password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="login-password">
+                        </div>
+                        <button type="submit"
+                                class="login-btn btn btn-outline-light mt-3 align-self-center">Login</button>
+                </form>
+                <a href="/register">Register your agency</a>
+
+        </div>
+
+        <div class="hide" id="success-loader">
+                <h2>Welcome back, [USERNAME]</h2>
+                <h4>Loading your field agents...</h4>
+        </div>
 </div>
+
+
+
+
+
+<script src="/js/login.js"></script>

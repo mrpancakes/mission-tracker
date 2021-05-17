@@ -2,12 +2,18 @@ body {
     margin: auto;
     color: white;
     font-family: 'Space Mono', monospace;
-    
+}
 
+main {
+    position: relative;
 }
 
 nav {
     height: 150px;
+}
+
+h1 {
+    margin: 15px;
 }
 
 form {
@@ -40,6 +46,38 @@ a {
     font-size: 1.8rem;
     cursor: pointer;
 }
+
+.fas.fa-plus-square:hover{
+    color: #e8e8e8;
+}
+
+.fas.fa-times.exit {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: black;
+    background-color: transparent !important;
+    border-color: transparent;
+    flex: 50%
+}
+
+.detail-view {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    position: relative;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+
+#add-agent-form{
+    width: 50%;
+}
+
+#agent-detail-form {
+    width: 80%;
+}
+
 .fas.fa-times {
     font-size: 1.5rem;
     cursor: pointer;
@@ -50,6 +88,12 @@ a {
     border-radius: 3px;
 }
 
+.fas.fa-times:hover {
+    border: 1px solid rgb(191, 5, 5);
+    background-color: rgb(191, 5, 5);
+}
+
+
 .hex-bg {
     background-image: url('../public/images/gray-pattern.png');
 }
@@ -57,6 +101,12 @@ a {
 .agency-name {
     font-size: 1.3rem;
     margin-left: 30px;
+}
+
+.agent-detail-form-btn {
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .form-btn {
@@ -99,6 +149,14 @@ a {
     display: none;
 }
 
+.login-btn {
+    width: 100%;
+}
+
+.register-btn {
+    width: 50%;
+}
+
 #login-page {
     position: absolute;
     top: 50%;
@@ -132,13 +190,15 @@ a {
 }
 
 @media screen and (max-width: 993px) {
-    .agency-name {
-        display: none;
-    }
+
 }
 
 
 @media screen and (max-width: 576px) {
+
+    h1 {
+        font-size: 1.3rem;
+    }
 
     nav {
         height: 100px;
@@ -151,7 +211,7 @@ a {
     .agency-name {
         display: none;
     }
-    
+
     form {
         width: 100% !important;
     }
@@ -159,4 +219,7 @@ a {
     #login-page img {
         width: 150px;
     }
+
+    
+    
 }

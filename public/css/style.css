@@ -2,12 +2,18 @@ body {
     margin: auto;
     color: white;
     font-family: 'Space Mono', monospace;
-    
+}
 
+main {
+    position: relative;
 }
 
 nav {
     height: 150px;
+}
+
+h1 {
+    margin: 15px;
 }
 
 form {
@@ -16,6 +22,14 @@ form {
 
 a {
     text-decoration: none;
+}
+
+.lg-bottom-margin{
+    margin-bottom: 80px;
+}
+
+.sm-bottom-margin{
+    margin-bottom: 80px;
 }
 
 .filter {
@@ -32,6 +46,34 @@ a {
     font-size: 1.8rem;
     cursor: pointer;
 }
+
+.fas.fa-plus-square:hover{
+    color: #e8e8e8;
+}
+
+.fas.fa-times.exit {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: black;
+    background-color: transparent !important;
+    border-color: transparent;
+    flex: 50%
+}
+
+.detail-view {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    position: relative;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+
+#agent-detail-form {
+    width: 80%;
+}
+
 .fas.fa-times {
     font-size: 1.5rem;
     cursor: pointer;
@@ -42,26 +84,28 @@ a {
     border-radius: 3px;
 }
 
+.fas.fa-times:hover {
+    border: 1px solid rgb(191, 5, 5);
+    background-color: rgb(191, 5, 5);
+}
+
+
 .hex-bg {
     background-image: url('/images/gray-pattern.png');
 }
-
-#field-agents-headline, #add-agent-headline{
-    margin: 20px;
-}
-
-
 
 .agency-name {
     font-size: 1.3rem;
     margin-left: 30px;
 }
 
-.login-btn {
-    width: 100%
+.agent-detail-form-btn {
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
-.register-btn {
+.form-btn {
     width: 50%;
 }
 
@@ -101,6 +145,18 @@ a {
     display: none;
 }
 
+.login-btn {
+    width: 100%;
+}
+
+.register-btn {
+    width: 50%;
+}
+
+#add-agent-form{
+    width: 50%;
+}
+
 #login-page {
     position: absolute;
     top: 50%;
@@ -134,16 +190,22 @@ a {
 }
 
 @media screen and (max-width: 993px) {
-    .agency-name {
-        display: none;
-    }
+
 }
 
 
 @media screen and (max-width: 576px) {
 
+    h1 {
+        font-size: 1.3rem;
+    }
+
     nav {
         height: 100px;
+    }
+
+    form {
+        width: 100% !important;
     }
     
     .nav-details {
@@ -153,11 +215,7 @@ a {
     .agency-name {
         display: none;
     }
-    
-    form {
-        width: 100% !important;
-    }
-
+   
     #login-page img {
         width: 150px;
     }
