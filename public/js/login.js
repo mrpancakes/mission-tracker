@@ -1,29 +1,43 @@
-const loginForm = async (event) => {
+const loginForm = document.querySelector('.login-form');
+const successMsg = document.querySelector('#success-loader');
+const loginFormSection = document.querySelector('#login-section');
+
+const loginFormHandler = async (event) => {
     event.preventDefault();
 
-    // get the information from the login form
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
+    const username = document.querySelector('#login-username').value.trim();
+    const password = document.querySelector('#login-password').value.trim();
 
-    // if both fields have content
-    if (email && password) {
-        // POST to the login route with the user information
-        const response = await fetch('/api/user/login', {
-            method: 'post',
-            body: JSON.stringify({
-                email,
-                password
-            }),
-            headers: {'Content-Type': 'application/json'}
+    if (username && password) {
+        const response = await fetch('api/user/login', {
+            method: 'POST',
+            body: JSON.stringify({ username, password }),
+            headers: { 'Content-Type': 'application/json' },
         });
-        // when the fetch promise is fufilled, check the response status; if the response is good, load the dashboard; if there is an error, alert with the status
-        if (response.ok) {
-            document.location.replace('/userProfile');
-        } else {
-            let result = await response.json()
-            alert(result.message)
-        }
-    }
-}
 
-document.querySelector('.login-form').addEventListener('submit', loginForm);
+        if (response.ok) {
+
+            loginFormSection.setAttribute('class', 'hide');
+               successMsg.setAttribute("class", "d-flex flex-column justify-content-center align-items-center");
+
+            setTimeout (() => {
+                document.location.replace('/home');
+            }, 2000)
+
+            console.log('testing when this appears')
+
+
+        } else {
+            alert('Failed to login. Please try again, or signup.');
+            console.log(response);
+        };
+
+    };
+
+    console.log(username.value);
+    console.log(password.value);
+};
+
+
+
+loginForm.addEventListener('submit', loginFormHandler);
