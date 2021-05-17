@@ -2,6 +2,22 @@ const loginForm = document.querySelector('.login-form');
 const successMsg = document.querySelector('#success-loader');
 const loginFormSection = document.querySelector('#login-section');
 
+const myText = '...';
+const myArray = myText.split("");
+let loopTimer;
+
+function letterTicker() {
+    if (myArray.length > 0) {
+        document.getElementById("dots").innerHTML += myArray.shift();
+    } else {
+        clearTimeout(loopTimer);
+        return false;
+    }
+    loopTimer = setTimeout('letterTicker()', 1100);
+}
+
+
+
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
@@ -18,11 +34,12 @@ const loginFormHandler = async (event) => {
         if (response.ok) {
 
             loginFormSection.setAttribute('class', 'hide');
-               successMsg.setAttribute("class", "d-flex flex-column justify-content-center align-items-center");
+            successMsg.setAttribute("class", "d-flex flex-column align-items-center");
+            letterTicker();
 
-            setTimeout (() => {
+            setTimeout(() => {
                 document.location.replace('/home');
-            }, 2000)
+            }, 2700)
 
             console.log('testing when this appears')
 

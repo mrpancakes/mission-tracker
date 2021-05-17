@@ -156,6 +156,9 @@ a {
 #add-agent-form{
     width: 50%;
 }
+#loading-txt {
+    letter-spacing: 0.2rem;
+}
 
 #login-page {
     position: absolute;
@@ -207,6 +210,10 @@ a {
     form {
         width: 100% !important;
     }
+
+    .navbar-brand {
+        margin-left: 30px;
+    }
     
     .nav-details {
         margin-top: 0px !important;
@@ -215,8 +222,23 @@ a {
     .agency-name {
         display: none;
     }
+
+    #login-page {
+        width: 70%;
+    }
    
     #login-page img {
         width: 150px;
     }
+
+    div#filter-set {
+        font-size: 0.7rem;
+    }
+
+    #success-loader, #success-loader>h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    #
 }
