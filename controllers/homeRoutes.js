@@ -22,6 +22,9 @@ router.get('/login', (req, res) => {
     res.redirect('/home');
     return;
   }
+
+  
+
   res.render('login');
 });
 
@@ -30,6 +33,34 @@ router.get('/login', (req, res) => {
 router.get('/register', (req, res) => {
   res.render('register');
 });
+
+
+// Loading page, after logging in:
+router.get('/loading', async (req, res) => {
+
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+    });
+
+
+    const user = userData.get({ plain: true });
+
+    console.log(user);
+
+    res.render('loading', {
+      user,
+      loggedIn: req.session.loggedIn,
+    });
+
+    console.log(user);
+
+
+  } catch (error) {
+    res.status(400).json(error);
+    console.log(error);
+  }
+})
 
 
 // Home Page - Shows agents only created by logged in user

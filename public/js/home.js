@@ -59,11 +59,11 @@ document.addEventListener('click', (event) => {
     if (userChoice === 'activeAgentsFilter') {
 
         if (activeAgents > 0) {
-            inactiveAgents[i].setAttribute('class', 'col-12 col-md-6 col-lg-3 mb-5 hide');
+            inactiveAgents[i].setAttribute('class', 'hide');
         };
 
         for (let i = 0; i < activeAgents.length; i++) {
-            activeAgents[i].setAttribute('class', 'col-12 col-md-6 col-lg-3 mb-5');
+            activeAgents[i].setAttribute('class', 'col-12 col-md-6 col-lg-3 mb-5 Active');
         };
 
         activeAgentsFilter.setAttribute('class', 'm-4 filter border-bottom border-2');
@@ -74,12 +74,12 @@ document.addEventListener('click', (event) => {
     if (userChoice === 'inactiveAgentsFilter') {
 
         for (let i = 0; i < activeAgents.length; i++) {
-            activeAgents[i].setAttribute('class', 'col-12 col-md-6 col-lg-3 mb-5 hide');
+            activeAgents[i].setAttribute('class', 'hide');
         };
 
 
         for (let i = 0; i < inactiveAgents.length; i++) {
-            inactiveAgents[i].setAttribute('class', 'col-12 col-md-6 col-lg-3 mb-5');
+            inactiveAgents[i].setAttribute('class', 'col-12 col-md-6 col-lg-3 mb-5 Inactive');
         };
 
         activeAgentsFilter.setAttribute('class', 'm-4 filter');
@@ -90,11 +90,11 @@ document.addEventListener('click', (event) => {
     if (userChoice === 'allAgentsFilter') {
 
         for (let i = 0; i < activeAgents.length; i++) {
-            activeAgents[i].setAttribute('class', 'col-12 col-md-6 col-lg-3 mb-5');
+            activeAgents[i].setAttribute('class', 'col-12 col-md-6 col-lg-3 mb-5 Active');
         };
 
         for (let i = 0; i < inactiveAgents.length; i++) {
-            inactiveAgents[i].setAttribute('class', 'col-12 col-md-6 col-lg-3 mb-5');
+            inactiveAgents[i].setAttribute('class', 'col-12 col-md-6 col-lg-3 mb-5 Inactive');
         };
 
 
@@ -102,6 +102,8 @@ document.addEventListener('click', (event) => {
         inactiveAgentsFilter.setAttribute('class', 'm-4 filter');
         allAgentsFilter.setAttribute('class', 'm-4 filter border-bottom border-2');
     };
+
+    console.log(userChoice);
 
 
 });

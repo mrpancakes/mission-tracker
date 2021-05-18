@@ -33,16 +33,7 @@ const loginFormHandler = async (event) => {
 
         if (response.ok) {
 
-            loginFormSection.setAttribute('class', 'hide');
-            successMsg.setAttribute("class", "d-flex flex-column align-items-center");
-            letterTicker();
-
-            setTimeout(() => {
-                document.location.replace('/home');
-            }, 2700)
-
-            console.log('testing when this appears')
-
+            document.location.replace('/loading');
 
         } else {
             alert('Failed to login. Please try again, or signup.');

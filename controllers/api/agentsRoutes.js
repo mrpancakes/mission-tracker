@@ -47,27 +47,14 @@ router.delete('/:id', withAuth, async (req, res) => {
 router.put('/:id', withAuth, async (req, res) => {
   console.log("Updating Post");
   try {
-    const updatePost = await Post.update({
+    const updateAgent = await Agents.update({
       ...req.body
     }, {
       where: {
         id: req.params.id
       }
     });
-    res.status(200).json(updatePost);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
-
-router.post('/:id/comment', withAuth, async (req, res) => {
-  try {
-    const newComment = await Comment.create({
-      ...req.body,
-      user_id: req.session.user_id,
-      post_id: req.params.id
-    });
-    res.status(200).json(newComment);
+    res.status(200).json(updateAgent);
   } catch (err) {
     res.status(400).json(err);
   }
