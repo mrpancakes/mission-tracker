@@ -4,8 +4,8 @@ const fieldAgentsHeadline = document.querySelector('#field-agents-headline');
 const addAgentHeadline = document.querySelector('#add-agent-headline');
 const fieldAgentCards = document.querySelector('#field-agent-cards');
 const newAgentForm = document.querySelector('#add-agent-form');
-const activeAgents = document.querySelectorAll('.active');
-const inactiveAgents = document.querySelectorAll('.inactive');
+const activeAgents = document.querySelectorAll('.Active');
+const inactiveAgents = document.querySelectorAll('.Inactive');
 const resetBtn = document.querySelector('#reset-btn');
 const filterSet = document.querySelector('#filter-set')
 

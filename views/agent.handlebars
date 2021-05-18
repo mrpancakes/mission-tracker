@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark  ml-auto">
         <div class="container-fluid m-5 nav-details">
             <a class="navbar-brand" href="#">
-                <img src="../public/images/logo.png" alt="" width="80px" class="d-inline-block align-text-top">
+                <img src="/images/logo.png" alt="" width="80px" class="d-inline-block align-text-top">
             </a>
-            <div class="agency-name">B.O.S.S.</div>
+            <div class="agency-name">{{user.agency_name}}</div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -21,7 +21,7 @@
 
         <div class="detail-view d-flex flex-column justify-content-center align-items-center p-5">
             <a href="/home" class="align-self-end"><i class="fas fa-times exit " id="add-agent-btn"></i></a>
-            <h1 class="mb-5" id="agent-name">Agent Cobra</h1>
+            <h1 class="mb-5" id="agent-name">Agent {{code_name}}</h1>
 
             <form class="detail-view d-flex flex-column justify-content-center align-items-center">
                 <div class="" id="agent-form-section">
@@ -29,14 +29,14 @@
                         <div class="mb-3 col-12 col-lg-6">
                             <label for="new-agent-codename" class="form-label">Codename</label>
                             <input type="text" maxlength="13" class="form-control" id="lnew-agent-codename"
-                                aria-describedby="codename">
+                                aria-describedby="codename" value="{{code_name}}">
                         </div>
                         <div class="mb-3 col-12 col-lg-6">
                             <div class="mb-2">Status</div>
                             <select class="form-select mb-3" aria-label="status">
-                                <option selected>Choose one</option>
-                                <option value="1">Active</option>
-                                <option value="2">Inactive</option>
+                                <option>Choose one</option>
+                                <option value="1" selected>{{statusChosen status}}</option>
+                                <option value="2">{{oppositeStatus status}}</option>
                             </select>
                         </div>
                     </div>
@@ -44,11 +44,11 @@
                     <div class="row">
                         <div class="mb-3 col-12 col-lg-6">
                             <label for="new-agent-first" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="new-agent-first" aria-describedby="firstname">
+                            <input type="text" class="form-control" id="new-agent-first" aria-describedby="firstname" value="{{first}}">
                         </div>
                         <div class="mb-3 col-12 col-lg-6">
                             <label for="new-agent-last" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="new-agent-last" aria-describedby="lastname">
+                            <input type="text" class="form-control" id="new-agent-last" aria-describedby="lastname" value="{{last}}">
                         </div>
                     </div>
                     <div class="row">
@@ -56,20 +56,20 @@
                             <div class="mb-2">Gender</div>
                             <select class="form-select mb-3" aria-label="gender">
                                 <option>Choose one</option>
-                                <option value="1">Male</option>
-                                <option value="2" selected>Female</option>
+                                <option value="1" selected>{{genderChosen gender}}</option>
+                                <option value="2">{{oppositeGender gender}}</option>
                             </select>
                         </div>
                         <div class="mb-3 col-12 col-lg-6">
                             <label for="new-agent-city" class="form-label">Assigned City</label>
-                            <input type="text" class="form-control" id="new-agent-city" aria-describedby="cityname">
+                            <input type="text" class="form-control" id="new-agent-city" aria-describedby="cityname" value="{{location}}">
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <label for="new-agent-skills" class="form-label">Specialties</label>
                         <textarea type="text-area" class="form-control" id="new-agent-skills"
-                            aria-describedby="skills"></textarea>
+                            aria-describedby="skills">{{specialties}}</textarea>
                     </div>
 
                     <div class="row">

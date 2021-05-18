@@ -52,6 +52,8 @@ router.get('/home', async (req, res) => {
       loggedIn: req.session.loggedIn,
     });
 
+    console.log(user);
+
 
   } catch (error) {
     res.status(400).json(error);
@@ -59,49 +61,23 @@ router.get('/home', async (req, res) => {
   }
 })
 
-// Home Page OLD
-// router.get('/home', async (req, res) => {
-//   try {
-//     // Get all agents info and JOIN with user data
-//     const agentsData = await Agents.findAll({
-//       include: [
-//         { model: User }
-//       ],
-//     });
-
-//     // Serialize data so the template can read it, this is getting allll the agents data
-//     const agents = agentsData.map((agents) => agents.get({ plain: true }));
-
-//     // Pass serialized data and session flag into template and putting into a dashboard view file
-//     res.render('home', {
-//       agents,
-//       // logged_in: req.session.logged_in 
-//     });
-
-//     console.log(agents);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-
 // View Specific Agents
-router.get('/agents/:id', async (req, res) => {//router.get is 
+router.get('/agents/:id', async (req, res) => { 
   try {
     const agentData = await Agents.findByPk(req.params.id, {
       include: [
-        {
-          model: User,
-          attributes: ['user_name'],
-        },],
+        { model: User }
+      ],
     });
+
     console.log(agentData);
-    const agent = agentData.get({ plain: true });;// this is for the specific agent
+    const agent = agentData.get({ plain: true });
     console.log(agent);
-    //console.log(req.session.user_id);
-    res.render('agent', { //this is rendering whatever view we want it to, just calling it agent for now, it is for specific agents
-      //spread operator, take post out of the array, spread just takes the info out, destructuring takes specific things out
-      ...agent,//is this referring to the const agent above or agents model name or what
+
+
+    
+    res.render('agent', { 
+      ...agent,
       logged_in: req.session.logged_in,
       logged_in_user: req.session.user_id
     });

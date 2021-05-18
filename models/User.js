@@ -26,16 +26,16 @@ User.init({
                 isEmail: true,
             },
         },
+        agency_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [4],
             },
-        agency_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            }
         },
     },
 
