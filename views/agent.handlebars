@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark  ml-auto">
         <div class="container-fluid m-5 nav-details">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/home">
                 <img src="/images/logo.png" alt="" width="80px" class="d-inline-block align-text-top">
             </a>
             <div class="agency-name">{{user.agency_name}}</div>
@@ -81,7 +81,7 @@
                 </div>
 
                 <div class="text-center hide" id="delete-confirm">
-                    <h1>Are you sure you want to terminate Agent Cobra?</h1>
+                    <h1>Are you sure you want to terminate Agent {{code_name}}?</h1>
                     <button type="submit" class="col-11 col-lg-5 btn btn-danger agent-detail-form-btn">Yes,
                         terminate.</button>
                     <a href="#"> <button type="submit" class="col-11 col-lg-5 btn btn-outline-dark agent-detail-form-btn"

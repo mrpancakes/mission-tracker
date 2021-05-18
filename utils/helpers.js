@@ -5,11 +5,11 @@ module.exports = {
   genderChoice: (gender) => {
 
     if (gender === 'Male') {
-      return `${'/images/man-agent.PNG'}`
+      return `${'/images/man-agent.png'}`
     }
     else {
 
-      return `${'/images/woman-agent.PNG'}`;
+      return `${'/images/woman-agent.png'}`;
     }
   },
 

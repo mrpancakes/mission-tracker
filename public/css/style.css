@@ -85,8 +85,8 @@ a {
 }
 
 .fas.fa-times:hover {
-    border: 1px solid rgb(191, 5, 5);
     background-color: rgb(191, 5, 5);
+    transform: scale(1.1);
 }
 
 
