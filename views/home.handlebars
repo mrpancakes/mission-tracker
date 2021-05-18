@@ -51,13 +51,13 @@
         </div>
 
         <form class="hide" id="add-agent-form">
-                <div class="row">
-                        <div class="mb-3 col-12 col-lg-6">
+                <div class="row mb-3">
+                        <div class="col-12 col-lg-6">
                                 <label for="new-agent-codename" class="form-label">Codename</label>
-                                <input type="text" maxlength="13" class="form-control" id="lnew-agent-codename"
+                                <input type="text" maxlength="13" class="form-control" id="new-agent-codename"
                                         aria-describedby="codename">
                         </div>
-                        <div class="mb-3 col-12 col-lg-6">
+                        <div class="col-12 col-lg-6">
                                 <div class="mb-2">Status</div>
                                 <select class="form-select mb-3" aria-label="status">
                                         <option selected>Choose one</option>
@@ -67,7 +67,7 @@
                         </div>
                 </div>
 
-                <div class="row">
+                <div class="row mb-3">
                         <div class="mb-4 col-12 col-lg-6">
                                 <label for="new-agent-first" class="form-label">First Name</label>
                                 <input type="text" class="form-control" id="new-agent-first"
@@ -98,7 +98,7 @@
                         <textarea type="text-area" class="form-control" id="new-agent-skills"
                                 aria-describedby="skills"></textarea>
                 </div>
-                <button type="submit" class="col-12 btn btn-success agent-detail-form-btn text-center">Add
+                <button type="submit" id="add-agent-btn" class="col-12 btn btn-success agent-detail-form-btn text-center">Add
                         Agent</button>
         </form>
 </main>

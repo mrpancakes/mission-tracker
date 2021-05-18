@@ -25,13 +25,13 @@
 
             <form class="detail-view d-flex flex-column justify-content-center align-items-center">
                 <div class="" id="agent-form-section">
-                    <div class="row">
-                        <div class="mb-3 col-12 col-lg-6">
+                    <div class="row mb-2">
+                        <div class="col-12 col-lg-6">
                             <label for="new-agent-codename" class="form-label">Codename</label>
-                            <input type="text" maxlength="13" class="form-control" id="lnew-agent-codename"
+                            <input type="text" maxlength="13" class="form-control" id="new-agent-codename"
                                 aria-describedby="codename" value="{{code_name}}">
                         </div>
-                        <div class="mb-3 col-12 col-lg-6">
+                        <div class="col-12 col-lg-6">
                             <div class="mb-2">Status</div>
                             <select class="form-select mb-3" aria-label="status">
                                 <option>Choose one</option>
@@ -41,18 +41,18 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="mb-3 col-12 col-lg-6">
+                    <div class="row mb-4">
+                        <div class="col-12 col-lg-6">
                             <label for="new-agent-first" class="form-label">First Name</label>
                             <input type="text" class="form-control" id="new-agent-first" aria-describedby="firstname" value="{{first}}">
                         </div>
-                        <div class="mb-3 col-12 col-lg-6">
+                        <div class="col-12 col-lg-6">
                             <label for="new-agent-last" class="form-label">Last Name</label>
                             <input type="text" class="form-control" id="new-agent-last" aria-describedby="lastname" value="{{last}}">
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="mb-3 col-12 col-lg-6">
+                    <div class="row mb-3">
+                        <div class="col-12 col-lg-6">
                             <div class="mb-2">Gender</div>
                             <select class="form-select mb-3" aria-label="gender">
                                 <option>Choose one</option>
@@ -60,7 +60,7 @@
                                 <option value="2">{{oppositeGender gender}}</option>
                             </select>
                         </div>
-                        <div class="mb-3 col-12 col-lg-6">
+                        <div class="col-12 col-lg-6">
                             <label for="new-agent-city" class="form-label">Assigned City</label>
                             <input type="text" class="form-control" id="new-agent-city" aria-describedby="cityname" value="{{location}}">
                         </div>
@@ -73,19 +73,17 @@
                     </div>
 
                     <div class="row">
-                        <button type="submit" class="col-11 col-lg-5 btn btn-success agent-detail-form-btn">Update
+                        <button type="submit" id="update-btn" class="col-11 col-lg-5 btn btn-success agent-detail-form-btn">Update
                             Agent</button>
-                        <button type="submit" class="col-11 col-lg-5 btn btn-danger agent-detail-form-btn"
-                            id="terminate-initiate-btn">Terminate Agent</button>
+                        <button type="submit" id="terminate-initiate-btn" class="col-11 col-lg-5 btn btn-danger agent-detail-form-btn">Terminate Agent</button>
                     </div>
                 </div>
 
                 <div class="text-center hide" id="delete-confirm">
                     <h1>Are you sure you want to terminate Agent {{code_name}}?</h1>
-                    <button type="submit" class="col-11 col-lg-5 btn btn-danger agent-detail-form-btn">Yes,
+                    <button type="submit" id="terminate-confirm-btn" class="col-11 col-lg-5 btn btn-danger agent-detail-form-btn">Yes,
                         terminate.</button>
-                    <a href="#"> <button type="submit" class="col-11 col-lg-5 btn btn-outline-dark agent-detail-form-btn"
-                        id="nevermind-btn">No, I changed my mind.</button></a>
+                    <a href="#"> <button type="submit" id="nevermind-btn" class="col-11 col-lg-5 btn btn-outline-dark agent-detail-form-btn">No, I changed my mind.</button></a>
                     <div></div>
                 </div>
             </form>
