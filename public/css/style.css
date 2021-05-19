@@ -192,6 +192,10 @@ a {
     font-size: 1.2rem;
 }
 
+#no-agents {
+    font-size: 1.4rem;
+}
+
 @media screen and (max-width: 993px) {
 
 }
