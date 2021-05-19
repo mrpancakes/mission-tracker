@@ -9,12 +9,9 @@ const countdownText = '3...,2...,1..., * Self Destructing *';
 const myArray = countdownText.split(",");
 let loopTimer;
 
-console.log(myArray);
-
 function countdown() {
   if (myArray.length > 0) {
     countdownDiv.innerHTML += myArray.shift();
-    console.log(countdownDiv);
     deleteConfirmDiv.appendChild(countdownDiv);
   } else {
     clearTimeout(loopTimer);
