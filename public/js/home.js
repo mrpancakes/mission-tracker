@@ -7,7 +7,9 @@ const newAgentForm = document.querySelector('#add-agent-form');
 const activeAgents = document.querySelectorAll('.Active');
 const inactiveAgents = document.querySelectorAll('.Inactive');
 const resetBtn = document.querySelector('#reset-btn');
-const filterSet = document.querySelector('#filter-set')
+const filterSet = document.querySelector('#filter-set');
+const noAgentsDiv = document.querySelector('#no-agents');
+const firstAgentBtn = document.querySelector('#first-agent-btn')
 
 const allAgentsFilter = document.querySelector('#allAgentsFilter');
 const activeAgentsFilter = document.querySelector('#activeAgentsFilter');
@@ -19,19 +21,33 @@ allAgentsFilter.textContent = `All (${allAgentsCount})`;
 activeAgentsFilter.textContent = `Active (${activeAgents.length})`;
 inactiveAgentsFilter.textContent = `Inactive (${inactiveAgents.length})`;
 
-addAgentBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-
+const createNewAgent = () => {
     fieldAgentCards.setAttribute('class', 'hide');
     addAgentBtn.setAttribute('class', 'hide');
     fieldAgentsHeadline.setAttribute('class', 'hide');
     filterSet.setAttribute('class', 'hide');
+    noAgentsDiv.setAttribute('class', 'hide');
 
     addAgentHeadline.setAttribute('class', '')
     abortBtn.setAttribute('class', 'fas fa-times');
     newAgentForm.setAttribute('class', 'm-auto mb-4 mt-4');
+}
 
+if(!allAgentsCount){
+    noAgentsDiv.setAttribute('class', 'detail-view p-5 text-center');
+    addAgentBtn.setAttribute('class', 'hide');
+}
+
+addAgentBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    createNewAgent();
 });
+
+firstAgentBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    createNewAgent();   
+});
+
 
 abortBtn.addEventListener('click', (event) => {
     event.preventDefault();
