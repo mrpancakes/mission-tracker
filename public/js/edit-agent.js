@@ -7,6 +7,7 @@ const code_name = document.querySelector('#new-agent-codename');
 const agent_status = document.querySelector('#new-agent-status');
 const agentId = document.querySelector('#agent-id').getAttribute('data-id');
 const updateBtn = document.querySelector('#update-btn');
+const alertMsg = document.querySelector('#success-alert');
 
 updateBtn.addEventListener('click', async (event) => {
     event.preventDefault();
@@ -30,7 +31,14 @@ const response = await fetch(`/api/agents/${agentId}`, {
     },
 });
 if (response.ok) {
-    document.location.replace('/agents/' + agentId)
+    
+    alertMsg.setAttribute('class', 'alert alert-success');
+
+    setTimeout(() => {
+        alertMsg.setAttribute('class', 'hide');
+        document.location.replace('/agents/' + agentId)
+    }, 2000)
+
 } else {
     alert(response.statusText);
 }

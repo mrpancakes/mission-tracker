@@ -1,94 +1,105 @@
 <nav class="navbar navbar-expand-lg navbar-dark  ml-auto">
-        <div class="container-fluid m-5 nav-details">
-            <a class="navbar-brand" href="/home">
-                <img src="/images/logo.png" alt="" width="80px" class="d-inline-block align-text-top">
-            </a>
-            <div class="agency-name">{{user.agency_name}}</div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav m-4">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
-                    </li>
-                </ul>
+    <div class="container-fluid m-5 nav-details">
+        <a class="navbar-brand" href="/home">
+            <img src="/images/logo.png" alt="" width="80px" class="d-inline-block align-text-top">
+        </a>
+        <div class="agency-name">{{user.agency_name}}</div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav m-4">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<main class="container mt-5">
+
+    <div class="detail-view d-flex flex-column justify-content-center align-items-center p-5" id="agent-id"
+        data-id="{{id}}">
+        <div class="hide" id="success-alert" role="alert">
+            Updating agent...
+        </div>
+        <a href="/home" class="align-self-end"><i class="fas fa-times exit " id="add-agent-btn"></i></a>
+
+        <h1 class="mb-5" id="agent-name">Agent {{code_name}}</h1>
+
+        <form class="detail-view d-flex flex-column justify-content-center align-items-center">
+            <div class="" id="agent-form-section">
+                <div class="row mb-2">
+                    <div class="col-12 col-lg-6">
+                        <label for="new-agent-codename" class="form-label">Codename</label>
+                        <input type="text" maxlength="13" class="form-control" id="new-agent-codename"
+                            aria-describedby="codename" value="{{code_name}}">
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="mb-2">Status</div>
+                        <select class="form-select mb-3" aria-label="status" id="new-agent-status">
+                            <option>Choose one</option>
+                            <option value="1" selected>{{statusChosen status}}</option>
+                            <option value="2">{{oppositeStatus status}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-12 col-lg-6">
+                        <label for="new-agent-first" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="new-agent-first" aria-describedby="firstname"
+                            value="{{first}}">
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <label for="new-agent-last" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="new-agent-last" aria-describedby="lastname"
+                            value="{{last}}">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-lg-6">
+                        <div class="mb-2">Gender</div>
+                        <select class="form-select mb-3" aria-label="gender" id="new-agent-gender">
+                            <option>Choose one</option>
+                            <option value="1" selected>{{genderChosen gender}}</option>
+                            <option value="2">{{oppositeGender gender}}</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <label for="new-agent-city" class="form-label">Assigned City</label>
+                        <input type="text" class="form-control" id="new-agent-city" aria-describedby="cityname"
+                            value="{{location}}">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="new-agent-skills" class="form-label">Specialties</label>
+                    <textarea type="text-area" class="form-control" id="new-agent-skills"
+                        aria-describedby="skills">{{specialties}}</textarea>
+                </div>
+
+                <div class="row">
+                    <button id="update-btn" class="col-11 col-lg-5 btn btn-success agent-detail-form-btn">Update
+                        Agent</button>
+                    <button id="terminate-initiate-btn"
+                        class="col-11 col-lg-5 btn btn-danger agent-detail-form-btn">Terminate Agent</button>
+                </div>
             </div>
-        </div>
-    </nav>
-    <main class="container mt-5">
 
-        <div class="detail-view d-flex flex-column justify-content-center align-items-center p-5" id="agent-id" data-id="{{id}}"> 
-            <a href="/home" class="align-self-end"><i class="fas fa-times exit " id="add-agent-btn"></i></a>
-            <h1 class="mb-5" id="agent-name">Agent {{code_name}}</h1>
+            <div class="text-center hide" id="delete-confirm">
+                <h1>Are you sure you want to terminate Agent <span id="deleted-agent">{{code_name}}</span>?</h1>
+                <button id="terminate-confirm-btn" class="col-11 col-lg-5 btn btn-danger agent-detail-form-btn">Yes,
+                    terminate.</button>
+                <a href="#"> <button type="submit" id="nevermind-btn"
+                        class="col-11 col-lg-5 btn btn-outline-dark agent-detail-form-btn">No, I changed my
+                        mind.</button></a>
+            </div>
+        </form>
+    </div>
+</main>
 
-            <form class="detail-view d-flex flex-column justify-content-center align-items-center">
-                <div class="" id="agent-form-section">
-                    <div class="row mb-2">
-                        <div class="col-12 col-lg-6">
-                            <label for="new-agent-codename" class="form-label">Codename</label>
-                            <input type="text" maxlength="13" class="form-control" id="new-agent-codename"
-                                aria-describedby="codename" value="{{code_name}}">
-                        </div>
-                        <div class="col-12 col-lg-6">
-                            <div class="mb-2">Status</div>
-                            <select class="form-select mb-3" aria-label="status" id="new-agent-status">
-                                <option>Choose one</option>
-                                <option value="1" selected>{{statusChosen status}}</option>
-                                <option value="2">{{oppositeStatus status}}</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <div class="col-12 col-lg-6">
-                            <label for="new-agent-first" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="new-agent-first" aria-describedby="firstname" value="{{first}}">
-                        </div>
-                        <div class="col-12 col-lg-6">
-                            <label for="new-agent-last" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="new-agent-last" aria-describedby="lastname" value="{{last}}">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-12 col-lg-6">
-                            <div class="mb-2">Gender</div>
-                            <select class="form-select mb-3" aria-label="gender" id="new-agent-gender">
-                                <option>Choose one</option>
-                                <option value="1" selected>{{genderChosen gender}}</option>
-                                <option value="2">{{oppositeGender gender}}</option>
-                            </select>
-                        </div>
-                        <div class="col-12 col-lg-6">
-                            <label for="new-agent-city" class="form-label">Assigned City</label>
-                            <input type="text" class="form-control" id="new-agent-city" aria-describedby="cityname" value="{{location}}">
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="new-agent-skills" class="form-label">Specialties</label>
-                        <textarea type="text-area" class="form-control" id="new-agent-skills"
-                            aria-describedby="skills">{{specialties}}</textarea>
-                    </div>
-
-                    <div class="row">
-                        <button id="update-btn" class="col-11 col-lg-5 btn btn-success agent-detail-form-btn">Update
-                            Agent</button>
-                        <button id="terminate-initiate-btn" class="col-11 col-lg-5 btn btn-danger agent-detail-form-btn">Terminate Agent</button>
-                    </div>
-                </div>
-
-                <div class="text-center hide" id="delete-confirm">
-                    <h1>Are you sure you want to terminate Agent <span id="deleted-agent">{{code_name}}</span>?</h1>
-                    <button id="terminate-confirm-btn" class="col-11 col-lg-5 btn btn-danger agent-detail-form-btn">Yes,
-                        terminate.</button>
-                    <a href="#"> <button type="submit" id="nevermind-btn" class="col-11 col-lg-5 btn btn-outline-dark agent-detail-form-btn">No, I changed my mind.</button></a>
-                </div>
-            </form>
-        </div>
-    </main>
-
-    <script src="/js/agent.js"></script>
-    <script src="/js/edit-agent.js"></script>
-    <script src="/js/delete-agent.js"></script>
+<script src="/js/agent.js"></script>
+<script src="/js/edit-agent.js"></script>
+<script src="/js/delete-agent.js"></script>
