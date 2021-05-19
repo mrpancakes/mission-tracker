@@ -187,7 +187,7 @@ a {
     color: white;
 }
 
-#login-page a:hover {
+.secondary-option:hover {
     transform: scale(1.1);
     transition: all 0.4s;
 }
@@ -252,6 +252,10 @@ a {
     #success-loader, #success-loader>h2 {
         text-align: center;
         margin-bottom: 20px;
+    }
+
+    #no-agents {
+        font-size: 1.1rem;
     }
 
     
