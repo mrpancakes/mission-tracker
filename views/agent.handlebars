@@ -19,7 +19,7 @@
     </nav>
     <main class="container mt-5">
 
-        <div class="detail-view d-flex flex-column justify-content-center align-items-center p-5">
+        <div class="detail-view d-flex flex-column justify-content-center align-items-center p-5" id="agent-id" data-id="{{id}}"> 
             <a href="/home" class="align-self-end"><i class="fas fa-times exit " id="add-agent-btn"></i></a>
             <h1 class="mb-5" id="agent-name">Agent {{code_name}}</h1>
 
@@ -33,7 +33,7 @@
                         </div>
                         <div class="col-12 col-lg-6">
                             <div class="mb-2">Status</div>
-                            <select class="form-select mb-3" aria-label="status">
+                            <select class="form-select mb-3" aria-label="status" id="new-agent-status">
                                 <option>Choose one</option>
                                 <option value="1" selected>{{statusChosen status}}</option>
                                 <option value="2">{{oppositeStatus status}}</option>
@@ -54,7 +54,7 @@
                     <div class="row mb-3">
                         <div class="col-12 col-lg-6">
                             <div class="mb-2">Gender</div>
-                            <select class="form-select mb-3" aria-label="gender">
+                            <select class="form-select mb-3" aria-label="gender" id="new-agent-gender">
                                 <option>Choose one</option>
                                 <option value="1" selected>{{genderChosen gender}}</option>
                                 <option value="2">{{oppositeGender gender}}</option>
@@ -73,15 +73,15 @@
                     </div>
 
                     <div class="row">
-                        <button type="submit" id="update-btn" class="col-11 col-lg-5 btn btn-success agent-detail-form-btn">Update
+                        <button id="update-btn" class="col-11 col-lg-5 btn btn-success agent-detail-form-btn">Update
                             Agent</button>
-                        <button type="submit" id="terminate-initiate-btn" class="col-11 col-lg-5 btn btn-danger agent-detail-form-btn">Terminate Agent</button>
+                        <button id="terminate-initiate-btn" class="col-11 col-lg-5 btn btn-danger agent-detail-form-btn">Terminate Agent</button>
                     </div>
                 </div>
 
                 <div class="text-center hide" id="delete-confirm">
                     <h1>Are you sure you want to terminate Agent {{code_name}}?</h1>
-                    <button type="submit" id="terminate-confirm-btn" class="col-11 col-lg-5 btn btn-danger agent-detail-form-btn">Yes,
+                    <button id="terminate-confirm-btn" class="col-11 col-lg-5 btn btn-danger agent-detail-form-btn">Yes,
                         terminate.</button>
                     <a href="#"> <button type="submit" id="nevermind-btn" class="col-11 col-lg-5 btn btn-outline-dark agent-detail-form-btn">No, I changed my mind.</button></a>
                     <div></div>
@@ -91,3 +91,5 @@
     </main>
 
     <script src="/js/agent.js"></script>
+    <script src="/js/edit-agent.js"></script>
+    <script src="/js/delete-agent.js"></script>
