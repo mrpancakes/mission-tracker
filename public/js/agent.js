@@ -4,6 +4,7 @@ const nevermindBtn = document.querySelector('#nevermind-btn');
 const confirmWindow = document.querySelector('#delete-confirm');
 const agentHeadline = document.querySelector('#agent-name');
 
+
 terminateBtn.addEventListener('click', (event) => {
     event.preventDefault();
 
@@ -13,3 +14,4 @@ terminateBtn.addEventListener('click', (event) => {
     confirmWindow.setAttribute('class', 'text-center');
     
 })
+
