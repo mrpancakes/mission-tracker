@@ -17,13 +17,13 @@ updateBtn.addEventListener('click', async (event) => {
 const response = await fetch(`/api/agents/${agentId}`, {
     method: 'PUT',
     body: JSON.stringify({
-        code_name: code_name.value,
-        first: first.value,
-        last: last.value,
-        location: city.value,
-        gender: gender.value,
-        specialties: specialties.value,
-        status: agent_status.value
+        code_name: code_name.value.trim(),
+        first: first.value.trim(),
+        last: last.value.trim(),
+        location: city.value.trim(),
+        gender: gender.options[gender.selectedIndex].text,
+        specialties: specialties.value.trim(),
+        status: agent_status.options[agent_status.selectedIndex].text
     }),
     headers: {
         'Content-Type': 'application/json'
