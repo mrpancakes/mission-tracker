@@ -40,7 +40,7 @@ Undercover is a Full Stack Web Application which allows users to create an admin
 
 Link to the live Heroku application is [here](https://calm-atoll-65386.herokuapp.com/).
 
-![A screenshot of the application](./public/images/missiontracker.png)
+![A screenshot of the application](./images/missiontracker.png)
 
 
 ## Credits
