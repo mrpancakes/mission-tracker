@@ -36,7 +36,7 @@ a {
     cursor: pointer;
 }
 
-.fa-circle {
+.ri-checkbox-blank-circle-fill {
     position: absolute;
     right: 10px;
     top: 10px;
@@ -157,6 +157,10 @@ a {
 
 .register-btn {
     width: 50%;
+}
+
+.ri-add-box-fill {
+    size: 2rem;
 }
 
 #agent-id {

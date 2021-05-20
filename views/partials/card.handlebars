@@ -1,7 +1,8 @@
 <a href='/agents/{{id}}' onclick="window.location.replace('/agents/{{id}}')" id="{{id}}" class="{{status}} col-12 col-md-6 col-lg-3 mb-5">
     <div class="card d-flex flex-column justify-content-between align-items-center m-auto">
         <div class="text-center mt-2 card-name">{{agent.code_name}}</div>
-        <i class="fas fa-circle {{statusColor status}}"></i>
+        {{!-- <i class="fas fa-circle {{statusColor status}}"></i> --}}
+        <i class="ri-checkbox-blank-circle-fill {{statusColor status}}"></i>
         <img src="{{genderChoice gender}}" alt="Agent {{agent.code_name}}" class="agent-image">
     </div>
 </a>

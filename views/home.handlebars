@@ -4,7 +4,7 @@
                         <a class="navbar-brand" href="#">
                                 <img src="/images/logo.png" alt="" width="80px" class="d-inline-block align-text-top">
                         </a>
-                        <div class="agency-name">{{user.agency_name}}</div>
+                        <a href="/home" class="agency-name text-white">{{user.agency_name}}</a>
                 </div>
 
                 <div class="" id="navbarNav">
@@ -38,7 +38,8 @@
         </header>
 
         <div class="hide" id="no-agents">
-                <div class="">Welcome to Undercover. You may begin adding, updating, and terminating your field agents. Good luck out there.</div>
+                <div class="">Welcome to Undercover. You may begin adding, updating, and terminating your field agents.
+                        Good luck out there.</div>
                 <button class="btn btn-success mt-4" id="first-agent-btn">Add Agent</button>
         </div>
 
@@ -48,9 +49,9 @@
         <div class="row d-flex justify-content-center" id="field-agent-cards">
 
                 {{#each user.agents as |agent|}}
-                
-                        {{>card agent = agent}}
-               
+
+                {{>card agent = agent}}
+
                 {{/each}}
 
         </div>
@@ -103,7 +104,8 @@
                         <textarea type="text-area" class="form-control" id="new-agent-skills"
                                 aria-describedby="skills"></textarea>
                 </div>
-                <button type="submit" id="new-agent-btn" class="col-12 btn btn-success agent-detail-form-btn text-center">Add
+                <button type="submit" id="new-agent-btn"
+                        class="col-12 btn btn-success agent-detail-form-btn text-center">Add
                         Agent</button>
         </form>
 </main>

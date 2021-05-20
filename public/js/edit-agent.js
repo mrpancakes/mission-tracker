@@ -37,7 +37,7 @@ if (response.ok) {
     setTimeout(() => {
         alertMsg.setAttribute('class', 'hide');
         document.location.replace('/agents/' + agentId)
-    }, 2000)
+    }, 1700)
 
 } else {
     alert(response.statusText);

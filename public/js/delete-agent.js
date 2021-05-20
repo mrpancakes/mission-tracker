@@ -17,7 +17,7 @@ function countdown() {
     clearTimeout(loopTimer);
     return false;
   }
-  loopTimer = setTimeout('countdown()', 1500);
+  loopTimer = setTimeout('countdown()', 950);
 };
 
 
@@ -34,7 +34,7 @@ deleteBtn.addEventListener('click', async (event) => {
     setTimeout(() => {
 
       document.location.replace('/home');
-    }, 6200)
+    }, 4200)
 
   } else {
     alert('Failed to delete post');
