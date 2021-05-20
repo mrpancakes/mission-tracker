@@ -2,27 +2,54 @@
 
 ## Description
   
-A real world Full Stack Web Application called Mission Tracker. Mission Tracker allows users to create a profile, create agents in their profile, and update agent tracking information in a clean and attractive platform. This app was created as a group and show cases responsiveness, interactiveness, authentication and authorization, database manipulation,  and follows the MVC architectural paradigm.   
+Undercover is a Full Stack Web Application which allows users to create an admin secret agency account with subsequent field agents to manage. Users can create, update, and terminate their field agents in a secure, clean, and attractive platform. This app was created as a group and showcases responsiveness, interactiveness, authentication and authorization, database manipulation, and follows the MVC architectural paradigm.
+
+## Functionality
+
+* Users must create an account and login to access their dashboard.
+* Once logged in, users gain access to their agency's portal where they can create, update, and terminate field agents.
+
+## NPM Packages Used
+
+* mysql2
+* sequelize
+* bcrypt
+* dotenv
+* express
+* express-handlebars
+* express-sessions
+* connect-session-sequelize
 
 ## Installation
 
-Open terminal and install dependencies "npm install". Set up data base in MySQL. Create .env file with your info. When you are ready to go, run "npm run seed" in the terminal and then "node server.js".
+1) Open your terminal and install dependencies with:
 
-## Usage
+        npm install
 
-Open browser and go to URL https://localhost:8080
+2) Update the .env.EXAMPLE file with your SQL and Secret info, and remove '.EXAMPLE' from the file name. 
+3) Open the /db folder and copy/paste the provided schema into MySQLWorkbench or comparable program.
+4) Run the following seed command in your terminal to add seed users and agents:
+        
+        npm run seed
 
-![A screenshot of the application](./public/images/missiontracker.PNG)
+5) Start the local server and open localhost:8080 in your browser:
 
-link to application: https://calm-atoll-65386.herokuapp.com/
+        node server.js
+
+## Live App
+
+Link to the live Heroku application is [here](https://calm-atoll-65386.herokuapp.com/).
+
+![A screenshot of the application](./public/images/missiontracker.png)
+
 
 ## Credits
 
-Scott Strittmatter | Nate Griggs | Emily Metzgar  
+[Scott Strittmatter](https://github.com/mrpancakes) | [Nate Griggs](https://github.com/nateghsc09) | [Emily Metzgar](https://github.com/emilymetzgar)
 
 ## License
 
-MIT License
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 Copyright (c) [2021] [Scott Strittmatter, Nate Griggs, Emily Metzgar SMU Coding Bootcamp]
 
