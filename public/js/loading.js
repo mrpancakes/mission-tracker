@@ -10,13 +10,13 @@ function letterTicker() {
         return false;
     }
     loopTimer = setTimeout('letterTicker()', 1100);
-}
+};
 
 function startTimer() {
     letterTicker();
     setTimeout(() => {
         document.location.replace('/home');
     }, 2700)
-}
+};
 
 startTimer();
