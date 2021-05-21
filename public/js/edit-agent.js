@@ -12,34 +12,31 @@ const alertMsg = document.querySelector('#success-alert');
 updateBtn.addEventListener('click', async (event) => {
     event.preventDefault();
 
-//add agent front end js, working with home.handlebars
+    const response = await fetch(`/api/agents/${agentId}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+            code_name: code_name.value.trim(),
+            first: first.value.trim(),
+            last: last.value.trim(),
+            location: city.value.trim(),
+            gender: gender.options[gender.selectedIndex].text,
+            specialties: specialties.value.trim(),
+            status: agent_status.options[agent_status.selectedIndex].text
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+    if (response.ok) {
 
+        alertMsg.setAttribute('class', 'alert alert-success');
 
-const response = await fetch(`/api/agents/${agentId}`, {
-    method: 'PUT',
-    body: JSON.stringify({
-        code_name: code_name.value.trim(),
-        first: first.value.trim(),
-        last: last.value.trim(),
-        location: city.value.trim(),
-        gender: gender.options[gender.selectedIndex].text,
-        specialties: specialties.value.trim(),
-        status: agent_status.options[agent_status.selectedIndex].text
-    }),
-    headers: {
-        'Content-Type': 'application/json'
-    },
-});
-if (response.ok) {
-    
-    alertMsg.setAttribute('class', 'alert alert-success');
+        setTimeout(() => {
+            alertMsg.setAttribute('class', 'hide');
+            document.location.replace('/agents/' + agentId)
+        }, 1700)
 
-    setTimeout(() => {
-        alertMsg.setAttribute('class', 'hide');
-        document.location.replace('/agents/' + agentId)
-    }, 1700)
-
-} else {
-    alert(response.statusText);
-}
+    } else {
+        alert(response.statusText);
+    }
 });

@@ -14,9 +14,7 @@ function letterTicker() {
         return false;
     }
     loopTimer = setTimeout('letterTicker()', 1100);
-}
-
-
+};
 
 const loginFormHandler = async (event) => {
     event.preventDefault();
@@ -32,18 +30,13 @@ const loginFormHandler = async (event) => {
         });
 
         if (response.ok) {
-
             document.location.replace('/loading');
-
         } else {
             alert('Failed to login. Please try again, or signup.');
             console.log(response);
         };
 
     };
-
-    console.log(username.value);
-    console.log(password.value);
 };
 
 
