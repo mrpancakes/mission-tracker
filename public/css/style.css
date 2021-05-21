@@ -123,6 +123,11 @@ a {
     background-color: white;
     width: 250px;
     height: 250px;
+    box-shadow: 30px 20px 50px rgba(150, 150, 150, 0.19), 0 10px 10px rgba(131, 131, 131, 0.23);
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .card-name {
